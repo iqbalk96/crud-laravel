@@ -7,7 +7,7 @@
 
             <a
                 href="{{ route('articles.edit', $article) }}"
-                class="inline-flex items-center px-4 py-2 bg-yellow-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-600 transition"
+                class="text-sm text-gray-600 dark:text-gray-400 hover:underline"
             >
                 Edit Article
             </a>
@@ -36,7 +36,7 @@
                             <img
                                 src="{{ asset('storage/' . $article->thumbnail) }}"
                                 alt="{{ $article->title }}"
-                                class="mt-2 rounded-lg border border-gray-300 dark:border-gray-700 max-h-72"
+                                class="mt-2 w-auto rounded-lg object-cover border"
                             >
                         </div>
                     @endif
