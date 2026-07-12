@@ -13,6 +13,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        // Saya ambil 10 data yang terbaru dari Model Article
+        // Article ambil dari database sesuai ENV dan pilih table articles
         $articles = Article::latest()->paginate(10);
 
         return view('articles.index', compact('articles'));
@@ -23,6 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        // Menampilkan form
         return view('articles.create');
     }
 
@@ -46,6 +49,7 @@ class ArticleController extends Controller
 
         $validated['slug'] = Str::slug($validated['title']);
 
+        // Proses menyimpan ke database
         Article::create($validated);
 
         return redirect()
